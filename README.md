@@ -1,35 +1,13 @@
-# Laravel + Inertia Developer Skills Test
-
-## 🚀 Setup
-
-1. Clone this repository
-    ```bash
-    git clone git@github.com:denver3542/laravel-react-inertia-dev-test.git
-    cd laravel-react-inertia-dev-test
-    ```
-2. Install dependencies
-    ```bash
-    composer install
-    npm install
-    ```
-3. Copy the `.env.example` file to `.env` and update the database credentials
-    ```bash
-    cp .env.example .env
-    ```
-4. Generate application key
-    ```bash
-    php artisan key:generate
-    ```
-5. Run database migrations
-
-    ```bash
-    php artisan migrate
-    ```
-
-6. Start the development server
-
+## Answer for ITEM 3. 
 ```bash
-composer dev
+function add_script_to_specific_page() {
+    if (is_page((place here either ID or SLUG))) {
+        ?>
+        <script>
+            // place the script process/specific here
+        </script>
+        <?php
+    }
+}
+add_action('wp_head', 'add_script_to_specific_page');
 ```
-
-6. Open your browser and visit `http://localhost:8000`
