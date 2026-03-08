@@ -29,7 +29,7 @@ import {
 import { UserMenuContent } from '@/components/user-menu-content';
 import { useInitials } from '@/hooks/use-initials';
 import { cn } from '@/lib/utils';
-import { dashboard } from '@/routes';
+import { dashboard, feed } from '@/routes';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
@@ -40,6 +40,12 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
+        icon: LayoutGrid,
+    },
+
+    {
+        title: 'Posts',
+        href: feed(),
         icon: LayoutGrid,
     },
 ];
@@ -120,7 +126,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                                     key={item.title}
                                                     href={
                                                         typeof item.href ===
-                                                        'string'
+                                                            'string'
                                                             ? item.href
                                                             : item.href.url
                                                     }
@@ -166,11 +172,11 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                             className={cn(
                                                 navigationMenuTriggerStyle(),
                                                 page.url ===
-                                                    (typeof item.href ===
+                                                (typeof item.href ===
                                                     'string'
-                                                        ? item.href
-                                                        : item.href.url) &&
-                                                    activeItemStyles,
+                                                    ? item.href
+                                                    : item.href.url) &&
+                                                activeItemStyles,
                                                 'h-9 cursor-pointer px-3',
                                             )}
                                         >
@@ -211,7 +217,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                                 <a
                                                     href={
                                                         typeof item.href ===
-                                                        'string'
+                                                            'string'
                                                             ? item.href
                                                             : item.href.url
                                                     }
